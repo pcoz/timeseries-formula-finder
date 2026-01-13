@@ -24,10 +24,10 @@ A complete guide to using PPF for time-series analysis and symbolic form discove
 ### Installation
 
 ```bash
-pip install numpy scipy
+pip install timeseries-formula-finder
 
 # Optional: for hybrid EMD/SSA decomposition
-pip install EMD-signal
+pip install timeseries-formula-finder[hybrid]
 ```
 
 ### Your First Discovery

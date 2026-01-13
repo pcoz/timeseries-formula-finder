@@ -1,5 +1,6 @@
 # PPF - Symbolic Form Discovery
 
+[![PyPI version](https://img.shields.io/pypi/v/timeseries-formula-finder.svg)](https://pypi.org/project/timeseries-formula-finder/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 
@@ -36,7 +37,7 @@ PPF repeatedly **discovers → subtracts → analyzes residuals** to reveal the 
 ## Quick Start
 
 ```bash
-pip install numpy scipy
+pip install timeseries-formula-finder
 ```
 
 ```python
@@ -143,19 +144,28 @@ vec, names = feature_vector(features, schema="ppf.features.v1.full")
 
 ## Installation
 
+### From PyPI (recommended)
+
 ```bash
-# Clone the repository
+pip install timeseries-formula-finder
+```
+
+### From source
+
+```bash
 git clone https://github.com/pcoz/timeseries-formula-finder.git
-cd ppf
+cd timeseries-formula-finder
+pip install -e .
+```
 
-# Install dependencies
-pip install numpy scipy
+### Optional dependencies
 
-# Optional: for hybrid decomposition (EMD/SSA)
-pip install PyEMD
+```bash
+# For hybrid decomposition (EMD/SSA)
+pip install timeseries-formula-finder[hybrid]
 
-# Run tests
-pytest tests/ -v
+# For development (tests)
+pip install timeseries-formula-finder[dev]
 ```
 
 ## Documentation
