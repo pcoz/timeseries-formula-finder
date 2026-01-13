@@ -262,16 +262,6 @@ Performance on standard symbolic regression benchmarks:
 
 See [BENCHMARK_COMPARISON.md](BENCHMARK_COMPARISON.md) for detailed results.
 
-## Contributing
-
-Contributions are welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
-
-Areas of interest:
-- Additional macro templates for new domains
-- Performance optimization of GP engine
-- New export targets (Rust, WASM, ONNX)
-- Integration with AutoML frameworks
-
 ## License
 
 MIT License - see [LICENSE](LICENSE) for details.
