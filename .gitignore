@@ -28,9 +28,14 @@ docs/overview_for_practitioners.md
 docs/paper_on_computational_irreducibility.md
 docs/project_overview.md
 docs/session_*.md
+docs/SESSION_*.md
 docs/SESSION_NOTES.md
 docs/SYSTEMS_ANALYSIS.md
 docs/*.pdf
+
+# Session documents (any location)
+SESSION_*.md
+session_*.md
 
 # Internal files at root
 BENCHMARK_COMPARISON.md
