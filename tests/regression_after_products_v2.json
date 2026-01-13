@@ -1,0 +1,969 @@
+[
+  {
+    "name": "const_0",
+    "category": "constant",
+    "path_found": true,
+    "path": [],
+    "is_constant": true,
+    "is_linear": true,
+    "is_quadratic": true,
+    "is_exponential": false,
+    "is_fibonacci": true,
+    "polynomial_degree": 0,
+    "exponential_base": null
+  },
+  {
+    "name": "const_1",
+    "category": "constant",
+    "path_found": true,
+    "path": [],
+    "is_constant": true,
+    "is_linear": true,
+    "is_quadratic": true,
+    "is_exponential": true,
+    "is_fibonacci": false,
+    "polynomial_degree": 0,
+    "exponential_base": 1.0
+  },
+  {
+    "name": "const_-1",
+    "category": "constant",
+    "path_found": true,
+    "path": [],
+    "is_constant": true,
+    "is_linear": true,
+    "is_quadratic": true,
+    "is_exponential": true,
+    "is_fibonacci": false,
+    "polynomial_degree": 0,
+    "exponential_base": 1.0
+  },
+  {
+    "name": "const_5",
+    "category": "constant",
+    "path_found": true,
+    "path": [],
+    "is_constant": true,
+    "is_linear": true,
+    "is_quadratic": true,
+    "is_exponential": true,
+    "is_fibonacci": false,
+    "polynomial_degree": 0,
+    "exponential_base": 1.0
+  },
+  {
+    "name": "const_3.14",
+    "category": "constant",
+    "path_found": true,
+    "path": [],
+    "is_constant": true,
+    "is_linear": true,
+    "is_quadratic": true,
+    "is_exponential": true,
+    "is_fibonacci": false,
+    "polynomial_degree": 0,
+    "exponential_base": 1.0
+  },
+  {
+    "name": "const_1000000.0",
+    "category": "constant",
+    "path_found": true,
+    "path": [],
+    "is_constant": true,
+    "is_linear": true,
+    "is_quadratic": true,
+    "is_exponential": true,
+    "is_fibonacci": false,
+    "polynomial_degree": 0,
+    "exponential_base": 1.0
+  },
+  {
+    "name": "const_1e-06",
+    "category": "constant",
+    "path_found": true,
+    "path": [],
+    "is_constant": true,
+    "is_linear": true,
+    "is_quadratic": true,
+    "is_exponential": true,
+    "is_fibonacci": false,
+    "polynomial_degree": 0,
+    "exponential_base": 1.0
+  },
+  {
+    "name": "linear_1n+0",
+    "category": "linear",
+    "path_found": true,
+    "path": [
+      "difference"
+    ],
+    "is_constant": false,
+    "is_linear": true,
+    "is_quadratic": true,
+    "is_exponential": false,
+    "is_fibonacci": false,
+    "polynomial_degree": 1,
+    "exponential_base": null
+  },
+  {
+    "name": "linear_2n+0",
+    "category": "linear",
+    "path_found": true,
+    "path": [
+      "difference"
+    ],
+    "is_constant": false,
+    "is_linear": true,
+    "is_quadratic": true,
+    "is_exponential": false,
+    "is_fibonacci": false,
+    "polynomial_degree": 1,
+    "exponential_base": null
+  },
+  {
+    "name": "linear_-1n+0",
+    "category": "linear",
+    "path_found": true,
+    "path": [
+      "difference"
+    ],
+    "is_constant": false,
+    "is_linear": true,
+    "is_quadratic": true,
+    "is_exponential": false,
+    "is_fibonacci": false,
+    "polynomial_degree": 1,
+    "exponential_base": null
+  },
+  {
+    "name": "linear_0.5n+0",
+    "category": "linear",
+    "path_found": true,
+    "path": [
+      "difference"
+    ],
+    "is_constant": false,
+    "is_linear": true,
+    "is_quadratic": true,
+    "is_exponential": false,
+    "is_fibonacci": false,
+    "polynomial_degree": 1,
+    "exponential_base": null
+  },
+  {
+    "name": "linear_1n+1",
+    "category": "linear",
+    "path_found": true,
+    "path": [
+      "difference"
+    ],
+    "is_constant": false,
+    "is_linear": true,
+    "is_quadratic": true,
+    "is_exponential": false,
+    "is_fibonacci": false,
+    "polynomial_degree": 1,
+    "exponential_base": null
+  },
+  {
+    "name": "linear_2n+3",
+    "category": "linear",
+    "path_found": true,
+    "path": [
+      "difference"
+    ],
+    "is_constant": false,
+    "is_linear": true,
+    "is_quadratic": true,
+    "is_exponential": false,
+    "is_fibonacci": false,
+    "polynomial_degree": 1,
+    "exponential_base": null
+  },
+  {
+    "name": "linear_-2n+5",
+    "category": "linear",
+    "path_found": true,
+    "path": [
+      "difference"
+    ],
+    "is_constant": false,
+    "is_linear": true,
+    "is_quadratic": true,
+    "is_exponential": false,
+    "is_fibonacci": false,
+    "polynomial_degree": 1,
+    "exponential_base": null
+  },
+  {
+    "name": "linear_1n+-1",
+    "category": "linear",
+    "path_found": true,
+    "path": [
+      "difference"
+    ],
+    "is_constant": false,
+    "is_linear": true,
+    "is_quadratic": true,
+    "is_exponential": false,
+    "is_fibonacci": false,
+    "polynomial_degree": 1,
+    "exponential_base": null
+  },
+  {
+    "name": "linear_1000n+0",
+    "category": "linear",
+    "path_found": true,
+    "path": [
+      "difference"
+    ],
+    "is_constant": false,
+    "is_linear": true,
+    "is_quadratic": true,
+    "is_exponential": false,
+    "is_fibonacci": false,
+    "polynomial_degree": 1,
+    "exponential_base": null
+  },
+  {
+    "name": "linear_0.001n+0",
+    "category": "linear",
+    "path_found": true,
+    "path": [
+      "difference"
+    ],
+    "is_constant": false,
+    "is_linear": true,
+    "is_quadratic": true,
+    "is_exponential": false,
+    "is_fibonacci": false,
+    "polynomial_degree": 1,
+    "exponential_base": null
+  },
+  {
+    "name": "quad_1n2+0n+0",
+    "category": "quadratic",
+    "path_found": true,
+    "path": [
+      "difference",
+      "difference"
+    ],
+    "is_constant": false,
+    "is_linear": false,
+    "is_quadratic": true,
+    "is_exponential": false,
+    "is_fibonacci": false,
+    "polynomial_degree": 2,
+    "exponential_base": null
+  },
+  {
+    "name": "quad_1n2+1n+0",
+    "category": "quadratic",
+    "path_found": true,
+    "path": [
+      "difference",
+      "difference"
+    ],
+    "is_constant": false,
+    "is_linear": false,
+    "is_quadratic": true,
+    "is_exponential": false,
+    "is_fibonacci": false,
+    "polynomial_degree": 2,
+    "exponential_base": null
+  },
+  {
+    "name": "quad_1n2+0n+1",
+    "category": "quadratic",
+    "path_found": true,
+    "path": [
+      "difference",
+      "difference"
+    ],
+    "is_constant": false,
+    "is_linear": false,
+    "is_quadratic": true,
+    "is_exponential": false,
+    "is_fibonacci": false,
+    "polynomial_degree": 2,
+    "exponential_base": null
+  },
+  {
+    "name": "quad_1n2+1n+1",
+    "category": "quadratic",
+    "path_found": true,
+    "path": [
+      "difference",
+      "difference"
+    ],
+    "is_constant": false,
+    "is_linear": false,
+    "is_quadratic": true,
+    "is_exponential": false,
+    "is_fibonacci": false,
+    "polynomial_degree": 2,
+    "exponential_base": null
+  },
+  {
+    "name": "quad_2n2+0n+0",
+    "category": "quadratic",
+    "path_found": true,
+    "path": [
+      "difference",
+      "difference"
+    ],
+    "is_constant": false,
+    "is_linear": false,
+    "is_quadratic": true,
+    "is_exponential": false,
+    "is_fibonacci": false,
+    "polynomial_degree": 2,
+    "exponential_base": null
+  },
+  {
+    "name": "quad_2n2+3n+1",
+    "category": "quadratic",
+    "path_found": true,
+    "path": [
+      "difference",
+      "difference"
+    ],
+    "is_constant": false,
+    "is_linear": false,
+    "is_quadratic": true,
+    "is_exponential": false,
+    "is_fibonacci": false,
+    "polynomial_degree": 2,
+    "exponential_base": null
+  },
+  {
+    "name": "quad_-1n2+0n+0",
+    "category": "quadratic",
+    "path_found": true,
+    "path": [
+      "difference",
+      "difference"
+    ],
+    "is_constant": false,
+    "is_linear": false,
+    "is_quadratic": true,
+    "is_exponential": false,
+    "is_fibonacci": false,
+    "polynomial_degree": 2,
+    "exponential_base": null
+  },
+  {
+    "name": "quad_0.5n2+0n+0",
+    "category": "quadratic",
+    "path_found": true,
+    "path": [
+      "difference",
+      "difference"
+    ],
+    "is_constant": false,
+    "is_linear": false,
+    "is_quadratic": true,
+    "is_exponential": false,
+    "is_fibonacci": false,
+    "polynomial_degree": 2,
+    "exponential_base": null
+  },
+  {
+    "name": "cubic_1n3+0n2+0n+0",
+    "category": "cubic",
+    "path_found": true,
+    "path": [
+      "difference",
+      "difference",
+      "difference"
+    ],
+    "is_constant": false,
+    "is_linear": false,
+    "is_quadratic": false,
+    "is_exponential": false,
+    "is_fibonacci": false,
+    "polynomial_degree": null,
+    "exponential_base": null
+  },
+  {
+    "name": "cubic_1n3+1n2+1n+1",
+    "category": "cubic",
+    "path_found": true,
+    "path": [
+      "difference",
+      "difference",
+      "difference"
+    ],
+    "is_constant": false,
+    "is_linear": false,
+    "is_quadratic": false,
+    "is_exponential": false,
+    "is_fibonacci": false,
+    "polynomial_degree": null,
+    "exponential_base": null
+  },
+  {
+    "name": "cubic_2n3+-1n2+3n+0",
+    "category": "cubic",
+    "path_found": true,
+    "path": [
+      "difference",
+      "difference",
+      "difference"
+    ],
+    "is_constant": false,
+    "is_linear": false,
+    "is_quadratic": false,
+    "is_exponential": false,
+    "is_fibonacci": false,
+    "polynomial_degree": null,
+    "exponential_base": null
+  },
+  {
+    "name": "poly_n4",
+    "category": "polynomial",
+    "path_found": true,
+    "path": [
+      "difference",
+      "difference",
+      "difference",
+      "difference"
+    ],
+    "is_constant": false,
+    "is_linear": false,
+    "is_quadratic": false,
+    "is_exponential": false,
+    "is_fibonacci": false,
+    "polynomial_degree": null,
+    "exponential_base": null
+  },
+  {
+    "name": "poly_n5",
+    "category": "polynomial",
+    "path_found": true,
+    "path": [
+      "difference",
+      "difference",
+      "difference",
+      "difference",
+      "difference"
+    ],
+    "is_constant": false,
+    "is_linear": false,
+    "is_quadratic": false,
+    "is_exponential": false,
+    "is_fibonacci": false,
+    "polynomial_degree": null,
+    "exponential_base": null
+  },
+  {
+    "name": "exp_1*2^n",
+    "category": "exponential",
+    "path_found": true,
+    "path": [
+      "ratio"
+    ],
+    "is_constant": false,
+    "is_linear": false,
+    "is_quadratic": false,
+    "is_exponential": true,
+    "is_fibonacci": false,
+    "polynomial_degree": null,
+    "exponential_base": 2.0
+  },
+  {
+    "name": "exp_1*3^n",
+    "category": "exponential",
+    "path_found": true,
+    "path": [
+      "ratio"
+    ],
+    "is_constant": false,
+    "is_linear": false,
+    "is_quadratic": false,
+    "is_exponential": true,
+    "is_fibonacci": false,
+    "polynomial_degree": null,
+    "exponential_base": 3.0
+  },
+  {
+    "name": "exp_1*0.5^n",
+    "category": "exponential",
+    "path_found": true,
+    "path": [
+      "ratio"
+    ],
+    "is_constant": false,
+    "is_linear": false,
+    "is_quadratic": false,
+    "is_exponential": true,
+    "is_fibonacci": false,
+    "polynomial_degree": null,
+    "exponential_base": 0.5
+  },
+  {
+    "name": "exp_1*1.5^n",
+    "category": "exponential",
+    "path_found": true,
+    "path": [
+      "ratio"
+    ],
+    "is_constant": false,
+    "is_linear": false,
+    "is_quadratic": false,
+    "is_exponential": true,
+    "is_fibonacci": false,
+    "polynomial_degree": null,
+    "exponential_base": 1.5
+  },
+  {
+    "name": "exp_2*2^n",
+    "category": "exponential",
+    "path_found": true,
+    "path": [
+      "ratio"
+    ],
+    "is_constant": false,
+    "is_linear": false,
+    "is_quadratic": false,
+    "is_exponential": true,
+    "is_fibonacci": false,
+    "polynomial_degree": null,
+    "exponential_base": 2.0
+  },
+  {
+    "name": "exp_5*2^n",
+    "category": "exponential",
+    "path_found": true,
+    "path": [
+      "ratio"
+    ],
+    "is_constant": false,
+    "is_linear": false,
+    "is_quadratic": false,
+    "is_exponential": true,
+    "is_fibonacci": false,
+    "polynomial_degree": null,
+    "exponential_base": 2.0
+  },
+  {
+    "name": "exp_1*10^n",
+    "category": "exponential",
+    "path_found": true,
+    "path": [
+      "ratio"
+    ],
+    "is_constant": false,
+    "is_linear": false,
+    "is_quadratic": false,
+    "is_exponential": true,
+    "is_fibonacci": false,
+    "polynomial_degree": null,
+    "exponential_base": 10.0
+  },
+  {
+    "name": "exp_1*1.01^n",
+    "category": "exponential",
+    "path_found": true,
+    "path": [
+      "ratio"
+    ],
+    "is_constant": false,
+    "is_linear": false,
+    "is_quadratic": false,
+    "is_exponential": true,
+    "is_fibonacci": false,
+    "polynomial_degree": null,
+    "exponential_base": 1.01
+  },
+  {
+    "name": "exp_1*0.99^n",
+    "category": "exponential",
+    "path_found": true,
+    "path": [
+      "ratio"
+    ],
+    "is_constant": false,
+    "is_linear": false,
+    "is_quadratic": false,
+    "is_exponential": true,
+    "is_fibonacci": false,
+    "polynomial_degree": null,
+    "exponential_base": 0.99
+  },
+  {
+    "name": "exp_1*-2^n",
+    "category": "exponential",
+    "path_found": true,
+    "path": [
+      "ratio"
+    ],
+    "is_constant": false,
+    "is_linear": false,
+    "is_quadratic": false,
+    "is_exponential": true,
+    "is_fibonacci": false,
+    "polynomial_degree": null,
+    "exponential_base": -2.0
+  },
+  {
+    "name": "exp_1*-1.5^n",
+    "category": "exponential",
+    "path_found": true,
+    "path": [
+      "ratio"
+    ],
+    "is_constant": false,
+    "is_linear": false,
+    "is_quadratic": false,
+    "is_exponential": true,
+    "is_fibonacci": false,
+    "polynomial_degree": null,
+    "exponential_base": -1.5
+  },
+  {
+    "name": "offset_exp_1*2^n+-1",
+    "category": "offset_exponential",
+    "path_found": true,
+    "path": [
+      "difference",
+      "ratio"
+    ],
+    "is_constant": false,
+    "is_linear": false,
+    "is_quadratic": false,
+    "is_exponential": false,
+    "is_fibonacci": false,
+    "polynomial_degree": null,
+    "exponential_base": null
+  },
+  {
+    "name": "offset_exp_1*2^n+1",
+    "category": "offset_exponential",
+    "path_found": true,
+    "path": [
+      "difference",
+      "ratio"
+    ],
+    "is_constant": false,
+    "is_linear": false,
+    "is_quadratic": false,
+    "is_exponential": false,
+    "is_fibonacci": false,
+    "polynomial_degree": null,
+    "exponential_base": null
+  },
+  {
+    "name": "offset_exp_1*2^n+5",
+    "category": "offset_exponential",
+    "path_found": true,
+    "path": [
+      "difference",
+      "ratio"
+    ],
+    "is_constant": false,
+    "is_linear": false,
+    "is_quadratic": false,
+    "is_exponential": false,
+    "is_fibonacci": false,
+    "polynomial_degree": null,
+    "exponential_base": null
+  },
+  {
+    "name": "offset_exp_2*3^n+-2",
+    "category": "offset_exponential",
+    "path_found": true,
+    "path": [
+      "difference",
+      "ratio"
+    ],
+    "is_constant": false,
+    "is_linear": false,
+    "is_quadratic": false,
+    "is_exponential": false,
+    "is_fibonacci": false,
+    "polynomial_degree": null,
+    "exponential_base": null
+  },
+  {
+    "name": "offset_exp_1*0.5^n+10",
+    "category": "offset_exponential",
+    "path_found": true,
+    "path": [
+      "difference",
+      "ratio"
+    ],
+    "is_constant": false,
+    "is_linear": false,
+    "is_quadratic": false,
+    "is_exponential": false,
+    "is_fibonacci": false,
+    "polynomial_degree": null,
+    "exponential_base": null
+  },
+  {
+    "name": "sum_2^n+n",
+    "category": "sum_poly_exp",
+    "path_found": true,
+    "path": [
+      "difference",
+      "difference",
+      "ratio"
+    ],
+    "is_constant": false,
+    "is_linear": false,
+    "is_quadratic": false,
+    "is_exponential": false,
+    "is_fibonacci": false,
+    "polynomial_degree": null,
+    "exponential_base": null
+  },
+  {
+    "name": "sum_2^n+n^2",
+    "category": "sum_poly_exp",
+    "path_found": true,
+    "path": [
+      "difference",
+      "difference",
+      "difference",
+      "ratio"
+    ],
+    "is_constant": false,
+    "is_linear": false,
+    "is_quadratic": false,
+    "is_exponential": false,
+    "is_fibonacci": false,
+    "polynomial_degree": null,
+    "exponential_base": null
+  },
+  {
+    "name": "fibonacci_standard",
+    "category": "fibonacci",
+    "path_found": true,
+    "path": [],
+    "is_constant": false,
+    "is_linear": false,
+    "is_quadratic": false,
+    "is_exponential": false,
+    "is_fibonacci": true,
+    "polynomial_degree": null,
+    "exponential_base": null
+  },
+  {
+    "name": "fibonacci_lucas",
+    "category": "fibonacci",
+    "path_found": true,
+    "path": [],
+    "is_constant": false,
+    "is_linear": false,
+    "is_quadratic": false,
+    "is_exponential": false,
+    "is_fibonacci": true,
+    "polynomial_degree": null,
+    "exponential_base": null
+  },
+  {
+    "name": "degenerate_quad_a0",
+    "category": "degenerate",
+    "path_found": true,
+    "path": [
+      "difference"
+    ],
+    "is_constant": false,
+    "is_linear": true,
+    "is_quadratic": true,
+    "is_exponential": false,
+    "is_fibonacci": false,
+    "polynomial_degree": 1,
+    "exponential_base": null
+  },
+  {
+    "name": "degenerate_linear_a0",
+    "category": "degenerate",
+    "path_found": true,
+    "path": [],
+    "is_constant": true,
+    "is_linear": true,
+    "is_quadratic": true,
+    "is_exponential": true,
+    "is_fibonacci": false,
+    "polynomial_degree": 0,
+    "exponential_base": 1.0
+  },
+  {
+    "name": "primitive_primes",
+    "category": "primitive",
+    "path_found": false,
+    "path": null,
+    "is_constant": false,
+    "is_linear": false,
+    "is_quadratic": false,
+    "is_exponential": false,
+    "is_fibonacci": false,
+    "polynomial_degree": null,
+    "exponential_base": null
+  },
+  {
+    "name": "primitive_pi_digits",
+    "category": "primitive",
+    "path_found": false,
+    "path": null,
+    "is_constant": false,
+    "is_linear": false,
+    "is_quadratic": false,
+    "is_exponential": false,
+    "is_fibonacci": false,
+    "polynomial_degree": null,
+    "exponential_base": null
+  },
+  {
+    "name": "primitive_random",
+    "category": "primitive",
+    "path_found": false,
+    "path": null,
+    "is_constant": false,
+    "is_linear": false,
+    "is_quadratic": false,
+    "is_exponential": false,
+    "is_fibonacci": false,
+    "polynomial_degree": null,
+    "exponential_base": null
+  },
+  {
+    "name": "excluded_n*2^n",
+    "category": "excluded",
+    "path_found": true,
+    "path": [
+      "divide_by_n",
+      "ratio"
+    ],
+    "is_constant": false,
+    "is_linear": false,
+    "is_quadratic": false,
+    "is_exponential": false,
+    "is_fibonacci": false,
+    "polynomial_degree": null,
+    "exponential_base": null
+  },
+  {
+    "name": "excluded_n^2*2^n",
+    "category": "excluded",
+    "path_found": true,
+    "path": [
+      "divide_by_n",
+      "divide_by_(n+1)",
+      "ratio"
+    ],
+    "is_constant": false,
+    "is_linear": false,
+    "is_quadratic": false,
+    "is_exponential": false,
+    "is_fibonacci": false,
+    "polynomial_degree": null,
+    "exponential_base": null
+  },
+  {
+    "name": "log_candidate_n_log_n",
+    "category": "log_candidate",
+    "path_found": true,
+    "path": [
+      "divide_by_n",
+      "exp"
+    ],
+    "is_constant": false,
+    "is_linear": false,
+    "is_quadratic": false,
+    "is_exponential": false,
+    "is_fibonacci": false,
+    "polynomial_degree": null,
+    "exponential_base": null
+  },
+  {
+    "name": "log_candidate_log_n",
+    "category": "log_candidate",
+    "path_found": true,
+    "path": [
+      "exp"
+    ],
+    "is_constant": false,
+    "is_linear": false,
+    "is_quadratic": false,
+    "is_exponential": false,
+    "is_fibonacci": false,
+    "polynomial_degree": null,
+    "exponential_base": null
+  },
+  {
+    "name": "log_candidate_n^2_log_n",
+    "category": "log_candidate",
+    "path_found": true,
+    "path": [
+      "divide_by_n",
+      "divide_by_(n+1)",
+      "exp"
+    ],
+    "is_constant": false,
+    "is_linear": false,
+    "is_quadratic": false,
+    "is_exponential": false,
+    "is_fibonacci": false,
+    "polynomial_degree": null,
+    "exponential_base": null
+  },
+  {
+    "name": "edge_all_zeros",
+    "category": "edge",
+    "path_found": true,
+    "path": [],
+    "is_constant": true,
+    "is_linear": true,
+    "is_quadratic": true,
+    "is_exponential": false,
+    "is_fibonacci": true,
+    "polynomial_degree": 0,
+    "exponential_base": null
+  },
+  {
+    "name": "edge_alternating",
+    "category": "edge",
+    "path_found": true,
+    "path": [
+      "ratio"
+    ],
+    "is_constant": false,
+    "is_linear": false,
+    "is_quadratic": false,
+    "is_exponential": true,
+    "is_fibonacci": false,
+    "polynomial_degree": null,
+    "exponential_base": -1.0
+  },
+  {
+    "name": "edge_large_values",
+    "category": "edge",
+    "path_found": true,
+    "path": [
+      "difference"
+    ],
+    "is_constant": false,
+    "is_linear": true,
+    "is_quadratic": true,
+    "is_exponential": false,
+    "is_fibonacci": false,
+    "polynomial_degree": 1,
+    "exponential_base": null
+  },
+  {
+    "name": "edge_small_values",
+    "category": "edge",
+    "path_found": true,
+    "path": [],
+    "is_constant": true,
+    "is_linear": true,
+    "is_quadratic": true,
+    "is_exponential": false,
+    "is_fibonacci": true,
+    "polynomial_degree": 0,
+    "exponential_base": null
+  }
+]

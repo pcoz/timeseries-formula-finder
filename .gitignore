@@ -1,0 +1,141 @@
+# Claude Code temp files
+tmpclaude-*-cwd
+tmpclaude-*
+nul
+.claude/
+
+# ============================================
+# Directories NOT part of the PPF library
+# (internal experiments, separate projects)
+# ============================================
+compression/
+core/
+data-profiler/
+review/
+rust/
+theory/
+test_data/
+examples/
+
+# ============================================
+# Internal/WIP documentation
+# (session notes, internal analysis, experiments)
+# ============================================
+docs/commercial_reassessment.md
+docs/gpt2_compression_results.md
+docs/llm_compression_opportunity.md
+docs/overview_for_practitioners.md
+docs/paper_on_computational_irreducibility.md
+docs/project_overview.md
+docs/session_*.md
+docs/SESSION_NOTES.md
+docs/SYSTEMS_ANALYSIS.md
+docs/*.pdf
+
+# Internal files at root
+BENCHMARK_COMPARISON.md
+TEST_RESULTS.md
+DOCUMENTATION.md
+
+# ============================================
+# Large test data files
+# ============================================
+oeis_stripped.txt
+*.csv
+
+# ============================================
+# Python
+# ============================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# ============================================
+# Testing
+# ============================================
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+coverage.xml
+*.cover
+*.py,cover
+
+# ============================================
+# Rust (if any rust experiments)
+# ============================================
+target/
+Cargo.lock
+
+# ============================================
+# IDE / Editor
+# ============================================
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+*.sublime-project
+*.sublime-workspace
+
+# ============================================
+# OS generated files
+# ============================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# ============================================
+# Logs and databases
+# ============================================
+*.log
+*.sql
+*.sqlite
+*.db
+
+# ============================================
+# Jupyter Notebook
+# ============================================
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# ============================================
+# Misc
+# ============================================
+*.bak
+*.tmp
+*.temp
+*.orig
