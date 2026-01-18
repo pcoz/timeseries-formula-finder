@@ -67,6 +67,52 @@ c_code = export_c(result.best_tradeoff.expression, use_float=True)
 # Compile with: gcc -std=c99 -O2 -lm model.c
 ```
 
+## Command-Line Interface
+
+PPF includes a powerful CLI for quick analysis without writing code:
+
+```bash
+# Discover formulas from CSV data
+ppf discover data.csv -x time -y signal
+
+# Verbose mode with specific discovery mode
+ppf discover data.csv --mode oscillator -v -g 100
+
+# Detect mathematical forms in windows
+ppf detect sensor.csv --min-r-squared 0.8
+
+# Extract forms iteratively until residuals are noise
+ppf stack data.csv --entropy-method spectral
+
+# Analyze with SSA decomposition (no extra dependencies)
+ppf hybrid data.csv --method ssa
+
+# Export discovered formula to Python code
+ppf --json discover data.csv | ppf export python -f predict > model.py
+
+# Export to C for embedded systems
+ppf --json discover data.csv | ppf export c -f sensor_model --float > model.h
+
+# Show available discovery modes
+ppf info modes
+```
+
+**Key Commands:**
+| Command | Purpose |
+|---------|---------|
+| `discover` | Symbolic regression to find formulas |
+| `detect` | Detect forms in data windows |
+| `stack` | Extract forms layer-by-layer |
+| `hierarchy` | Find nested multi-timescale patterns |
+| `hybrid` | EMD/SSA decomposition + interpretation |
+| `export` | Export to Python/C/JSON |
+| `features` | Extract ML-ready features |
+| `info` | Show modes, forms, macros |
+
+Use `ppf --help` or `ppf <command> --help` for detailed documentation.
+
+See [docs/CLI.md](docs/CLI.md) for the complete CLI reference.
+
 ## Features
 
 ### Multi-Domain Discovery
@@ -173,6 +219,7 @@ pip install timeseries-formula-finder[dev]
 | Document | Description |
 |----------|-------------|
 | [USER_GUIDE.md](USER_GUIDE.md) | Complete usage guide with examples |
+| [docs/CLI.md](docs/CLI.md) | Command-line interface reference |
 | [docs/PPF_Paper.md](docs/PPF_Paper.md) | Core PPF concepts and architecture |
 | [docs/PPF_Information_Theory_Paper.md](docs/PPF_Information_Theory_Paper.md) | Information-theoretic foundations |
 | [COMPARISON.md](COMPARISON.md) | How PPF compares to PySR, gplearn, Eureqa, AI Feynman |
@@ -232,6 +279,19 @@ if "exp(-" in result.best_tradeoff.expression_string:
 
 ```
 ppf/
+├── __main__.py           # Entry point for python -m ppf
+├── cli/                  # Command-line interface
+│   ├── main.py           # Main dispatcher, argparse setup
+│   ├── utils.py          # Data loading, output formatting
+│   └── commands/         # Individual command modules
+│       ├── discover.py   # ppf discover
+│       ├── detect.py     # ppf detect
+│       ├── stack.py      # ppf stack
+│       ├── hierarchy.py  # ppf hierarchy
+│       ├── hybrid.py     # ppf hybrid
+│       ├── export.py     # ppf export (python/c/json)
+│       ├── features.py   # ppf features
+│       └── info.py       # ppf info
 ├── symbolic_types.py     # Expression trees, macros, primitives
 ├── symbolic.py           # GP engine, symbolic regressor
 ├── symbolic_utils.py     # Printing, simplification

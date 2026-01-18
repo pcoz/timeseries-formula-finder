@@ -7,15 +7,16 @@ A complete guide to using PPF for time-series analysis and symbolic form discove
 ## Table of Contents
 
 1. [Quick Start](#1-quick-start)
-2. [Core Concepts](#2-core-concepts)
-3. [API Reference](#3-api-reference)
-4. [Discovery Modes](#4-discovery-modes)
-5. [Understanding Results](#5-understanding-results)
-6. [Export for Deployment](#6-export-for-deployment)
-7. [Feature Extraction](#7-feature-extraction)
-8. [Common Use Cases](#8-common-use-cases)
-9. [Troubleshooting](#9-troubleshooting)
-10. [Best Practices](#10-best-practices)
+2. [Command-Line Interface](#2-command-line-interface)
+3. [Core Concepts](#3-core-concepts)
+4. [API Reference](#4-api-reference)
+5. [Discovery Modes](#5-discovery-modes)
+6. [Understanding Results](#6-understanding-results)
+7. [Export for Deployment](#7-export-for-deployment)
+8. [Feature Extraction](#8-feature-extraction)
+9. [Common Use Cases](#9-common-use-cases)
+10. [Troubleshooting](#10-troubleshooting)
+11. [Best Practices](#11-best-practices)
 
 ---
 
@@ -61,7 +62,222 @@ R-squared:  0.9734
 
 ---
 
-## 2. Core Concepts
+## 2. Command-Line Interface
+
+PPF includes a command-line interface for quick analysis without writing Python code.
+
+### Installation
+
+After installing PPF, the `ppf` command is available:
+
+```bash
+pip install timeseries-formula-finder
+
+# Verify installation
+ppf --help
+```
+
+You can also run via Python module:
+
+```bash
+python -m ppf --help
+```
+
+### Quick Examples
+
+```bash
+# Discover formulas from a CSV file
+ppf discover data.csv -x time -y signal
+
+# Use a specific discovery mode with verbose output
+ppf discover data.csv --mode oscillator -v -g 100
+
+# Detect mathematical forms in data windows
+ppf detect sensor.csv --min-r-squared 0.8
+
+# Extract forms layer by layer until residuals are noise
+ppf stack data.csv --entropy-method spectral
+
+# Hierarchical pattern analysis at multiple timescales
+ppf hierarchy data.csv --window-size 100
+
+# Signal decomposition with SSA (no extra dependencies)
+ppf hybrid data.csv --method ssa
+
+# Export discovered formula to Python code
+ppf --json discover data.csv | ppf export python -f predict > model.py
+
+# Export to C for embedded systems
+ppf --json discover data.csv | ppf export c -f sensor_model --float > model.h
+
+# Show available discovery modes
+ppf info modes
+
+# Show all macro templates
+ppf info macros
+```
+
+### Available Commands
+
+| Command | Description |
+|---------|-------------|
+| `discover` | Symbolic regression to find mathematical formulas |
+| `detect` | Detect mathematical forms in data windows |
+| `stack` | Extract forms iteratively until residuals are noise |
+| `hierarchy` | Find nested patterns at multiple timescales |
+| `hybrid` | Combine EMD/SSA decomposition with form interpretation |
+| `export` | Export expressions to Python, C, or JSON |
+| `features` | Extract ML-ready features from discovery results |
+| `info` | Show available modes, forms, macros, and methods |
+
+### Global Options
+
+These options work with all commands:
+
+| Option | Description |
+|--------|-------------|
+| `-v, --verbose` | Show detailed progress and debug information |
+| `-q, --quiet` | Suppress all output except errors and results |
+| `--json` | Output results in JSON format (for piping) |
+| `-o, --output FILE` | Write output to FILE instead of stdout |
+| `--version` | Show version information |
+| `-h, --help` | Show help message |
+
+### Data Input Options
+
+Most commands accept these data input options:
+
+```bash
+ppf discover data.csv                    # From file
+ppf discover data.csv -x time -y signal  # Specify columns by name
+ppf discover data.csv -x 0 -y 1          # Specify columns by index
+cat data.csv | ppf discover --stdin      # From stdin
+ppf discover data.csv --delimiter ";"    # Custom delimiter
+ppf discover data.csv --skip-header 2    # Skip header rows
+```
+
+### The Discover Command
+
+The most commonly used command for symbolic regression:
+
+```bash
+ppf discover data.csv [options]
+```
+
+**Key options:**
+
+| Option | Default | Description |
+|--------|---------|-------------|
+| `-m, --mode` | auto | Discovery mode (auto, oscillator, circuit, growth, etc.) |
+| `-g, --generations` | 50 | Number of evolutionary generations |
+| `-p, --population-size` | 500 | Population size for genetic programming |
+| `--max-depth` | 6 | Maximum expression tree depth |
+| `--parsimony` | 0.001 | Complexity penalty coefficient |
+| `--random-state` | None | Random seed for reproducibility |
+| `--show-pareto` | off | Show full Pareto front of solutions |
+| `--simplify` | off | Simplify expressions before output |
+| `--latex` | off | Include LaTeX-formatted expressions |
+
+**Example output:**
+
+```
+============================================================
+SYMBOLIC REGRESSION RESULTS
+============================================================
+
+Generations: 50
+Evaluations: 25,000
+
+BEST TRADEOFF (recommended):
+----------------------------------------
+  Expression: 2.499*exp(-0.301*x)*sin(4.002*x + 0.497)
+  R-squared:  0.9847
+  MSE:        1.53e-02
+  Complexity: 8
+  Depth:      3
+
+MOST ACCURATE:
+----------------------------------------
+  Expression: 2.501*exp(-0.300*x)*sin(4.001*x + 0.498) + 0.002*x
+  R-squared:  0.9851
+  ...
+```
+
+### The Export Command
+
+Export discovered expressions to deployable code:
+
+```bash
+# Export to Python
+ppf --json discover data.csv | ppf export python -f my_model
+
+# Export to C for embedded systems
+ppf --json discover data.csv | ppf export c -f sensor_model --float
+
+# Export/transform JSON
+ppf --json discover data.csv | ppf export json --source "experiment_1"
+```
+
+**Python export options:**
+
+| Option | Description |
+|--------|-------------|
+| `-f, --function-name` | Name for generated function (default: evaluate) |
+| `--variable` | Variable name in code (default: x) |
+| `--safe` | Add bounds checking and error handling |
+
+**C export options:**
+
+| Option | Description |
+|--------|-------------|
+| `-f, --function-name` | Name for generated function |
+| `--variable` | Variable name in code |
+| `--float` | Use float instead of double |
+| `--macro-style` | Generate as preprocessor macro |
+| `--safe` | Add bounds checking |
+
+### Workflow Examples
+
+**Basic discovery and export:**
+
+```bash
+# 1. Discover a formula
+ppf discover sensor_data.csv -x time -y temp --mode auto -v
+
+# 2. If satisfied, export to code
+ppf --json discover sensor_data.csv | ppf export python -f predict_temp > model.py
+```
+
+**Batch processing:**
+
+```bash
+# Process multiple files
+for file in data/*.csv; do
+    echo "Processing $file..."
+    ppf --json discover "$file" > "${file%.csv}_model.json"
+done
+```
+
+**Inspection workflow:**
+
+```bash
+# Check what modes are available
+ppf info modes
+
+# Check what macros exist
+ppf info macros
+
+# Try different modes
+ppf discover data.csv --mode oscillator -v
+ppf discover data.csv --mode growth -v
+ppf discover data.csv --mode universal -v
+```
+
+For complete CLI documentation, see [docs/CLI.md](docs/CLI.md).
+
+---
+
+## 3. Core Concepts
 
 ### What is a "Promising Partial Form"?
 
@@ -100,7 +316,7 @@ Input Signal → DISCOVER (find best form)
 
 ---
 
-## 3. API Reference
+## 4. API Reference
 
 ### SymbolicRegressor
 
@@ -176,7 +392,7 @@ vec, names = feature_vector(features)
 
 ---
 
-## 4. Discovery Modes
+## 5. Discovery Modes
 
 PPF supports multiple discovery modes optimized for different signal types.
 
@@ -263,7 +479,7 @@ result = regressor.discover(x, y, mode=DiscoveryMode.IDENTIFY)
 
 ---
 
-## 5. Understanding Results
+## 6. Understanding Results
 
 ### The SymbolicRegressionResult Object
 
@@ -331,7 +547,7 @@ The Pareto front shows the accuracy-complexity tradeoff:
 
 ---
 
-## 6. Export for Deployment
+## 7. Export for Deployment
 
 ### Python Export
 
@@ -447,7 +663,7 @@ y_pred = restored.evaluate(x_new)
 
 ---
 
-## 7. Feature Extraction
+## 8. Feature Extraction
 
 Use discovered forms as interpretable features for downstream ML.
 
@@ -526,7 +742,7 @@ vec, names = feature_vector(features, schema="ppf.features.v1.full")
 
 ---
 
-## 8. Common Use Cases
+## 9. Common Use Cases
 
 ### 8.1 IoT Sensor Analysis
 
@@ -688,7 +904,7 @@ while True:
 
 ---
 
-## 9. Troubleshooting
+## 10. Troubleshooting
 
 ### Low R² Values
 
@@ -776,7 +992,7 @@ r2_full = 1 - np.sum((y - y_pred)**2) / np.sum((y - np.mean(y))**2)
 
 ---
 
-## 10. Best Practices
+## 11. Best Practices
 
 ### 1. Start with AUTO Mode
 

@@ -53,6 +53,9 @@ all = [
     "pytest-cov>=4.0.0",
 ]
 
+[project.scripts]
+ppf = "ppf.cli.main:main"
+
 [project.urls]
 Homepage = "https://fleetingswallow.com"
 Repository = "https://github.com/pcoz/timeseries-formula-finder"
