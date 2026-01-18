@@ -43,7 +43,7 @@ Example Usage:
     print(f"Found: {result.best_tradeoff.expression_string}")
 """
 
-__version__ = "0.1.0"
+__version__ = "0.2.0"
 
 # Core types
 from .types import (
