@@ -82,6 +82,44 @@ def calculate_fitness(
         )
 
 
+def fold_aliased_frequencies(tree: ExprNode, x: np.ndarray) -> ExprNode:
+    """Map DAMPED_SIN/DAMPED_COS frequencies into the Nyquist band of the grid.
+
+    On a uniform grid with spacing dx, frequencies w and w + 2*pi*k/dx are
+    indistinguishable at the samples, and the unbounded optimiser can land on
+    an alias (e.g. w ~ 2*pi on daily data, i.e. a "period" of ~1 sample),
+    giving a misleading formula. This rewrites each periodic macro to the
+    equivalent principal frequency |w| <= pi/dx, adjusting the phase so the
+    predictions at the sample points are unchanged. Non-uniform x: no-op.
+    """
+    x = np.asarray(x, dtype=float)
+    if x.size < 3:
+        return tree
+    d = np.diff(np.sort(x))
+    dx = float(np.median(d))
+    if dx <= 0 or not np.allclose(d, dx, rtol=1e-6, atol=1e-9):
+        return tree
+    x0 = float(np.min(x))
+    two_pi = 2.0 * np.pi
+    for node in tree.get_all_nodes():
+        if node.node_type != NodeType.MACRO or node.macro_op not in (
+                MacroOp.DAMPED_SIN, MacroOp.DAMPED_COS):
+            continue
+        a, k, w, phi = node.macro_params
+        n_alias = round(w * dx / two_pi)
+        if n_alias == 0:
+            continue
+        w_new = w - two_pi * n_alias / dx
+        phi_new = phi + two_pi * n_alias * x0 / dx
+        if w_new < 0:  # cos(-u) = cos(u); sin(-u) = -sin(u)
+            w_new, phi_new = -w_new, -phi_new
+            if node.macro_op == MacroOp.DAMPED_SIN:
+                a = -a
+        phi_new = (phi_new + np.pi) % two_pi - np.pi
+        node.macro_params = [a, k, w_new, phi_new]
+    return tree
+
+
 def optimize_constants(
     tree: ExprNode,
     x: np.ndarray,
@@ -129,6 +167,7 @@ def optimize_constants(
             options={'maxiter': max_iter, 'disp': False}
         )
         tree.set_constants(list(result.x))
+        fold_aliased_frequencies(tree, x)
         return tree, float(result.fun)
     except Exception:
         return tree, objective(np.array(constants))
